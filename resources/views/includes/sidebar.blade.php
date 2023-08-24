@@ -8,7 +8,7 @@
 
             <!-- Sidebar -->
             <div class="sidebar">
-                <!-- Sidebar user panel (optional) -->
+                <!-- Sidebar user panel ( optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
                         <img src="{{ url('adminlte/dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2" alt="User Image">
@@ -31,8 +31,31 @@
                                     
                                 </p>
                             </a>
-                    
-                        
+                    <li class="nav-item">
+                <a href="./buku" class="nav-link">
+                  <i class="fas fa-fw fa-book"></i>
+                  <p>Buku</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="./penulis" class="nav-link">
+                  <i class="fas fa-fw fa-pencil"></i>
+                  <p>Penulis</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="./penerbit" class="nav-link">
+                  <i class="fas fa-fw fa-user"></i>
+                  <p>Penerbit</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="./kategori" class="nav-link">
+                  <i class="fas fa-fw fa-tags"></i>
+                  <p>Kategori</p>
+                </a>
+              </li>
+        
                 <!-- /.sidebar-menu -->
             </div>
             <!-- /.sidebar -->
