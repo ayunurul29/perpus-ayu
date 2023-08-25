@@ -38,4 +38,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 // Route buku
 Route::resource('buku', BukuController::class);
-Route::post('/buku/tambah', [BukuController::class, 'create']);
+Route::post('/buku/create', [BukuController::class, 'create']);

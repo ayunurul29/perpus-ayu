@@ -1,16 +1,31 @@
 @extends('layouts.mainadmin')
 
 @section('content')
-
 <div class="content-wrapper">
-  
     <!-- Content Header (Page header) -->
     <div class="content-header">
-<div class="card">
       <div class="container-fluid">
-      </div>
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0">Dashboard</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Create</a></li>
+              <li class="breadcrumb-item active">Tambah Buku</li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+      <div class="container-fluid">
+        <div class="card">
+  <div class="card-header">
+    Tambah Buku
+  </div>
 
-                <form action="{{ url('/buku/create') }}" method="post">
+                <form action="{{ url('/buku/tambah') }}" method="post">
                   @csrf
                    <div class="form-group">
                   <label for="id">Id</label>
@@ -85,7 +100,7 @@
                   @enderror
                 </div>
                 <div class="form-group">
-<button type="submit" class="btn btn-outline-primary btn-sm">Tambah Data</button>
+                  <button type="submit" class="btn btn-primary btn-sm">Tambah</button>
                 <a href="{{ url('/buku') }}" class="btn btn-info btn-sm">Kembali</a>
                 </div>
                 </form>

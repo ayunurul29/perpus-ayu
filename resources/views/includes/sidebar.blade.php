@@ -55,8 +55,12 @@
                   <p>Kategori</p>
                 </a>
               </li>
-        
+        </ul>
+</nav>
                 <!-- /.sidebar-menu -->
             </div>
             <!-- /.sidebar -->
         </aside>
+    </li>
+
+
