@@ -42,16 +42,15 @@
                 <div class="container-fluid">
                     @yield('content')
                 </div>
-            
-    <!-- ./wrapper -->
+            </div>
         </div>
     </div>
 </body>
 
+
 <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
-
-
+     
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
@@ -652,6 +651,13 @@
             </section>
             <!-- /.content -->
         </div>
+        <div id="content">
+                @include('includes.footer')
+                <div class="container-fluid">
+                    @yield('content')
+                </div>
+            </div>
+        
         
 
         <!-- Control Sidebar -->
@@ -660,15 +666,8 @@
         </aside>
         <!-- /.control-sidebar -->
     </div>
-    <div id="content">
-                @include('includes.footer')
-                <div class="container-fluid">
-                    @yield('content')
-                </div>
-            </div>
     <!-- ./wrapper -->
-<!-- /.content-wrapper -->
-      
+
     <!-- jQuery -->
     <script src="plugins/jquery/jquery.min.js"></script>
     <!-- jQuery UI 1.11.4 -->

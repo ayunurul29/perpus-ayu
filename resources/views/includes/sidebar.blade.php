@@ -55,6 +55,12 @@
                   <p>Kategori</p>
                 </a>
               </li>
+               <li class="nav-item">
+                <a href="{{ url ('/actionlogout') }}" class="nav-link">
+                  <i class="fas fa-fw  fa-arrow-left"></i>
+                  <p>logout</p>
+                </a>
+              </li>
         </ul>
 </nav>
                 <!-- /.sidebar-menu -->
