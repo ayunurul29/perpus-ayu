@@ -1,5 +1,4 @@
-[11.13, 29/8/2023] Putriiiii: @endsection
-[11.14, 29/8/2023] Putriiiii: @extends('layouts.mainadmin')
+@extends('layouts.mainadmin')
 
 @section('content')
 

@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RegisterController;
@@ -19,7 +21,9 @@ use App\Http\Controllers\KategoriController;
 |
 */
 
-
+ // Route::get('/', function () {
+ //     return view('home');
+ // });
 
 Route::get('/', [LoginController::class, 'login'])->name('login');
 Route::post('actionlogin', [LoginController::class, 'actionlogin'])->name('actionlogin');
@@ -31,12 +35,10 @@ Route::get('actionlogout', [LoginController::class, 'actionlogout'])->name('acti
 Route::get('register', [RegisterController::class, 'register'])->name('register');
 Route::post('register/action', [RegisterController::class, 'actionregister'])->name('actionregister');
 
-
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-// Route buku
 Route::resource('buku', BukuController::class);
 Route::post('/buku/tambah', [BukuController::class, 'store']);
 Route::get('/buku/hapus', [BukuController::class, 'destroy']);
@@ -44,3 +46,8 @@ Route::get('/buku/hapus', [BukuController::class, 'destroy']);
 Route::resource('kategori', KategoriController::class);
 Route::post('/kategori/tambah', [KategoriController::class, 'store']);
 Route::get('/kategori/hapus', [KategoriController::class, 'destroy']);
+
+Route::middleware(['auth','admin'])->group(function() {
+    Route::get('/', [DashboardController::class, 'index'])
+    ->name('dashboard');
+});
