@@ -9,5 +9,10 @@ class Buku extends Model
 {
     use HasFactory;
        protected $guarded = [];
+
+        public function  kategori(){
+            return $this->belongsTo(Buku::class, 'idkategori');
+        }
+
      
 }
