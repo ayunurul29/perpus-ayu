@@ -31,6 +31,7 @@
         </div>
         <div style="overflow: auto">
             <table class="table table-bordered table-condensed">
+
                 <thead>
                     <tr>
                         <th style="text-align:center;">No</th>
@@ -45,6 +46,7 @@
                     </tr>
                 </thead>
                 @foreach($buku as $b)
+                  @method('put')
                 <tbody>
                     <tr>
                         <td style="text-align:center">{{ $loop->iteration }}</td>
@@ -52,17 +54,19 @@
                         <td style="text-align:center" style="text-align:center">{{ $b->id_penulis }}</td>
                         <td style="text-align:center">{{ $b->tahun_terbit }}</td>
                         <td style="text-align:center">{{ $b->id_penerbit }}</td>
-                        <td style="text-align:center">{{ $b->kategori->nama}}</td>
+                        <td style="text-align:center">{{ @$b->kategori->nama }}</td>
                         <td style="text-align:center">{{ $b->sinopsis }}</td>
-                        <td style="text-align:center">{{ $b->sampul }}</td>
+                        <td style="text-align:center">{{ $b->sampul }} 
+                          <img src="{{asset('storage/'.$b->sampul) }}"class="img-fluid mt-3">                               
+                                                 </td>
                         <td style="text-align:center">
-
-                            <a href="{{ route('buku_edit', $b->id) }}" class="btn btn-info">
+                                       
+                            <a href="" class="btn btn-info">
                                 <i class="fa-regular fa-eye"></i>
                             </a>
 
                             <a href="{{ route('buku_edit', $b->id) }}" class="btn btn-warning">
-                                <i class="fas fa-fw fa-pencil"></i>
+                           <i class="fas fa-fw fa-pencil"></i>
                             </a>
 
                             <form action="{{ route('buku_destroy', $b->id) }}" method="post" class="d-inline">

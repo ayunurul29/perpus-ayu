@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('kategoris', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
-            $table->string('kategori');
             $table->timestamps();
         });
     }
@@ -27,3 +26,4 @@ return new class extends Migration
         Schema::dropIfExists('kategoris');
     }
 };
+

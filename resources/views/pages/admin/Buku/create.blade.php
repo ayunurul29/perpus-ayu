@@ -36,18 +36,18 @@
                 <select class="form-control" id="id_kategori" name="id_kategori">
                 <option selected>Pilih Kategori</option>
                 @foreach($kategori as $k)
-                <option value="{{ $k->id }}">{{ $k->kategori }}</option>
+                <option value="{{ $k->id }}">{{ $k->nama }}</option>
                 @endforeach
             </select>
               <div class="form-group">
                 <label for="sinopsis">Sinopsis</label>
                 <input type="text" class="form-control" id="sinopsis" name="sinopsis" placeholder="Enter sinopsis">
               </div>
-              <div class="form-group">
-                <label for="sampul">Sampul</label>
-                <input type="text" class="form-control" id="sampul" name="sampul" placeholder="Enter sampul">
-              </div>
-          </div>
+    
+              <div class="mb-3">
+              <label for="sampul">sampul</label>
+              <input class="form-control" type="file" id="sampul" name="sampul">
+</div>
           <div class="card-footer">
             <button type="submit" class="btn btn-primary">Submit</button>
           </div>
