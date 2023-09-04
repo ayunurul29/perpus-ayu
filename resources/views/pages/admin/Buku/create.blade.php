@@ -16,29 +16,29 @@
             <form action="{{ route('buku_store') }}" method="POST" enctype="multipart/form-data">
               @csrf
               <div class="form-group">
-                <label for="id">Id</label>
-                <input type="text" class="form-control" id="id" placeholder="Enter id">
-              </div>
-              <div class="form-group">
                 <label for="nama">Nama</label>
                 <input type="text" class="form-control" id="nama" name="nama" placeholder="Enter nama">
-              </div>
-              <div class="form-group">
-                <label for="id_penulis">Penulis</label>
-                <input type="text" class="form-control" id="id_penulis" name="id_penulis" placeholder="Enter id penulis">
               </div>
               <div class="form-group">
                 <label for="tahun_terbit">Tahun Terbit</label>
                 <input type="text" class="form-control" id="tahun_terbit" name="tahun_terbit" placeholder="Enter tahun terbit">
               </div>
               <div class="form-group">
-                <label for="id_penerbit">Penerbit</label>
-                <input type="text" class="form-control" id="id_penerbit" name="id_penerbit" placeholder="Enter id penerbit">
+                <label for="id_penulis">Penulis</label>
+                <input type="text" class="form-control" id="id_penulis" name="id_penulis" placeholder="Enter penulis">
               </div>
-                <div class="form-group">
+              <div class="form-group">
+                <label for="id_penerbit">Penerbit</label>
+                <input type="text" class="form-control" id="id_penerbit" name="id_penerbit" placeholder="Enter penerbit">
+              </div>
+              <div class="form-group">
                 <label for="id_kategori">Kategori</label>
-                <input type="text" class="form-control" id="id_kategori" name="id_kategori" placeholder="enter id kategori">
-                 
+                <select class="form-control" id="id_kategori" name="id_kategori">
+                <option selected>Pilih Kategori</option>
+                @foreach($kategori as $k)
+                <option value="{{ $k->id }}">{{ $k->kategori }}</option>
+                @endforeach
+            </select>
               <div class="form-group">
                 <label for="sinopsis">Sinopsis</label>
                 <input type="text" class="form-control" id="sinopsis" name="sinopsis" placeholder="Enter sinopsis">
