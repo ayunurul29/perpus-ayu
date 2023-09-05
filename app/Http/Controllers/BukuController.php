@@ -56,7 +56,7 @@ class BukuController extends Controller
             'id_penerbit' => $request->id_penerbit,
             'id_kategori' => $request->id_kategori,
             'sinopsis' => $request->sinopsis,
-            'sampul' => $request->sampul,
+            'sampul' => $request->image,
 
         ]);
 
@@ -66,11 +66,12 @@ class BukuController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Buku $buku)
+    public function show( $id)
     {
+        $data = Buku::findOrFail($id);
+
         return view('pages.admin.buku.show', [
-            'title' => 'Show',
-            'buku' => $buku,
+            'data' => $data
         ]);
     }
 

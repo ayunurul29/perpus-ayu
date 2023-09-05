@@ -45,8 +45,8 @@
               </div>
     
               <div class="mb-3">
-              <label for="sampul">sampul</label>
-              <input class="form-control" type="file" id="sampul" name="sampul">
+              <label for="image">sampul</label>
+              <input class="form-control" type="file" id="image" name="image">
 </div>
           <div class="card-footer">
             <button type="submit" class="btn btn-primary">Submit</button>
