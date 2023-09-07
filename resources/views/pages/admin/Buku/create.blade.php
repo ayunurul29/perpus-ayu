@@ -16,12 +16,15 @@
             <form action="{{ route('buku_store') }}" method="POST" enctype="multipart/form-data">
               @csrf
              <div class="form-group">
-                <label for="nama">Nama</label>
-                <input type="text" class="form-control @error('nama') is-invalid @enderror" id="nama" name="nama" value="{{ old('nama') }}" placeholder="Enter nama" >
-                @error('nama')
-                <div class="invalid-feedback">{{ $message }}</div>
-                @enderror
-              </div>
+             <div class="form-group">
+                <label for="nama">Nama Buku</label>
+                <select class="form-control" id="id_buku" name="nama" >
+                <option selected>Nama Buku</option>
+                @foreach($peminjaman as $pinjam)
+                <option value="{{ $pinjam->id_buku}}">{{ $pinjam->id_buku}}</option>
+                @endforeach
+           
+            </select>
              <div class="form-group">
                 <label for="tahun_terbit">Tahun Terbit</label>
                 <input type="text" class="form-control @error('tahun_terbit') is-invalid @enderror" id="tahun_terbit" name="tahun_terbit" value="{{ old('tahun_terbit') }}" placeholder="Enter nama" >
@@ -46,14 +49,12 @@
               <div class="form-group">
              <div class="form-group">
                 <label for="id_kategori">Kategori</label>
-                <select class="form-control  @error('id_kategori') is-invalid @enderror" id="id_kategori" name="id_kategori" value="{{ old('id_kategori') }}" >
-                   @error('id_kategori')
-                <div class="invalid-feedback">{{ $message }}</div>
+                <select class="form-control" id="id_kategori" name="id_kategori" >
                 <option selected>Pilih Kategori</option>
                 @foreach($kategori as $k)
                 <option value="{{ $k->id }}">{{ $k->nama }}</option>
                 @endforeach
-              @enderror
+           
             </select>
               </div>
               <div class="form-group">
