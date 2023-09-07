@@ -641,8 +641,7 @@
                     @yield('content')
                 </div>
             </div>
-        
-        
+    
 
         <!-- Control Sidebar -->
         <aside class="control-sidebar control-sidebar-dark">

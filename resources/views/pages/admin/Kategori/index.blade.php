@@ -54,7 +54,7 @@
                                 </a>
                                 <form action="{{ route('kategori_destroy', $k->id) }}" method="post" class="d-inline">
                                 @csrf
-                                <button type="submit" onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data Ini?');" class="btn btn-danger" >Delete</button>
+                                <button type="submit" onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data Ini?');" class="btn btn-danger" ><i class="fas fa-fw  fa-trash"></i></button>
                             </td>
                         </tr>
                     </tbody>
