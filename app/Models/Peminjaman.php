@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Buku;
 
 class Peminjaman extends Model
 {
@@ -12,7 +13,7 @@ class Peminjaman extends Model
 
     public function buku()
     {
-        return $this->hasMany(Buku::class);
-    }
+        return $this->belongsTo(Peminjaman::class, 'id_buku');
 
+}
 }

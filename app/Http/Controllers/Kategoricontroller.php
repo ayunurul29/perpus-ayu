@@ -26,7 +26,7 @@ class KategoriController extends Controller
     {
         return view('pages.admin.kategori.create', [
             'title' => 'Tambah kategori',
-        ]);
+        ]); 
     }
 
     /**
@@ -46,7 +46,7 @@ class KategoriController extends Controller
         ]);
 
         return Redirect::route('kategori_index')->with('toast_success', 'Data berhasil di tambahkan  ');
-;
+
     }
 
     /**
@@ -86,7 +86,7 @@ class KategoriController extends Controller
         ]);
 
         return redirect()->route('kategori_index')->with('toast_success', 'Data berhasil di edit  ');
-;
+
     }
 
     /**
@@ -97,6 +97,6 @@ class KategoriController extends Controller
         Kategori::destroy($kategori->id);
 
         return redirect('/kategori')->with('toast_success', 'Data berhasil di Hapus  ');
-;
+
     }
 }

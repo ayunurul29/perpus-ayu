@@ -15,9 +15,14 @@
           <div class="card-body">
             <form action="{{ route('peminjaman_update', $item->id) }}" method="POST" enctype="multipart/form-data">
               @csrf
-              <div class="form-group">
-                <label for="id_buku">Judul buku</label>
-                <input type="text" class="form-control" id="id_buku" name="id_buku" placeholder="Enter id_buku" value="{{ $item->id_buku }}">
+                <div class="form-group">
+                <label for="id_buku">Nama Buku</label>
+                <select class="form-control" id="id_buku" name="id_buku" class="form-control">
+                <option value="">Pilih Buku</option>
+                @foreach($buku as $b)
+                <option value="{{ $b->nama }}" {{ $b->id == $item->id_buku ? 'selected' : '' }}>{{ $b->nama }}</option>
+                @endforeach
+            </select>
               </div>
               <div class="form-group">
                 <label for="id_anggota">Anggota</label>
@@ -37,7 +42,7 @@
               </div>
       <div class="form-group">
                 <label for="id_status_peminjaman">Status Pinjam</label>
-                <input type="text" class="form-control" id="id_status_peminjaman" name="id_status_peminjaman" placeholder="Enter status peminjam " value="{{ $item->id_status_peminjaman }}">
+                <input type="text" class="form-control" id="id_status_peminjaman" name="id_status_peminjaman" placeholder="Enter status peminjaman " value="{{ $item->id_status_peminjaman }}">
               </div>
      
 
